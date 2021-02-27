@@ -1,6 +1,6 @@
 # React-Prac
 
-Created with CodeSandbox
+A React App created with CodeSandbox
 
 # Project URL
 
