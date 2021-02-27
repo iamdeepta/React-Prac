@@ -1,7 +1,7 @@
 {
-  "name": "reactapp-practice",
+  "name": "react-prac",
   "version": "1.0.0",
-  "description": "Practice",
+  "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
