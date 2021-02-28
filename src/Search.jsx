@@ -16,6 +16,7 @@ const Search = () => {
     setLoader(true);
   };
 
+  //useEffect for loader
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
