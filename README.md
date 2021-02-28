@@ -17,3 +17,4 @@ https://ticx9.csb.app/
 7. Animate.css
 8. Unsplash Image API
 9. React-Bootstrap
+10. Google Fonts
