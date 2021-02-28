@@ -41,29 +41,40 @@ const Home = () => {
         exit="out"
         variants={pageTransition}
       >
-        <div style={{}} className="hero-image"></div>
+        <div
+          style={{ transform: `translateY(${offsetY * -1.0}px)` }}
+          className="hero-image"
+        ></div>
         <div
           className="hero-text"
           // style={{ transform: `translateY(${offsetY * 0.5}px)` }}
         >
           <h1
             style={{
-              fontSize: "58px",
-              transform: `translateY(${offsetY * 0.5}px)`
+              fontSize: "58px"
+              //transform: `translateY(${offsetY * 0.5}px)`
             }}
           >
             Welcome
           </h1>
-          <p style={{ transform: `translateY(${offsetY * 0.5}px)` }}>
+          <p
+            style={
+              {
+                //transform: `translateY(${offsetY * 0.5}px)`
+              }
+            }
+          >
             Keep It Simple
           </p>
           <Button
             className="btn_our_company animate__animated animate__heartBeat"
             variant="outlined"
             color="primary"
-            style={{
-              transform: `translateY(${offsetY * 0.5}px)`
-            }}
+            style={
+              {
+                //transform: `translateY(${offsetY * 0.5}px)`
+              }
+            }
           >
             Browse
           </Button>
@@ -73,7 +84,7 @@ const Home = () => {
         <h1 className="animate__animated animate__bounce mt-5">About Us</h1>
       </div> */}
 
-        <div className="container d-flex justify-content-between mt-5 our_company">
+        <div className="container d-flex justify-content-between our_company">
           <div data-aos="fade-right" className="company_image">
             <figure>
               <img

@@ -4,17 +4,23 @@ import { Button } from "@material-ui/core";
 import { motion } from "framer-motion";
 
 export default function About() {
-  const [val, setVal] = useState("Hello");
+  //const [val, setVal] = useState("Hello");
   const [val2, setVal2] = useState("");
+  const [about, setAbout] = useState("");
 
-  const changeText = () => {
-    val === "Hello" ? setVal(`Hello ${val2}`) : setVal("Hello");
-  };
-
-  const onChange = (event) => {
+  const changeText = (event) => {
+    // val === "Hello" ? setVal(`Hello ${val2}`) : setVal("Hello");
     setVal2(event.target.value);
-    //console.log(event);
   };
+
+  const changeAbout = () => {
+    setAbout(val2);
+  };
+
+  // const onChange = (event) => {
+  //   setVal2(event.target.value);
+  //   //console.log(event);
+  // };
 
   //creating object for opacity
   const pageVariants = {
@@ -47,21 +53,37 @@ export default function About() {
       >
         <div style={{ paddingTop: "7%" }}></div>
         <div className="App">
-          <h1>{val}</h1>
-          <h2>Press to toggle text {val2}</h2>
-          <Button variant="contained" color="primary" onClick={changeText}>
-            Press
+          <h4>Create Your Own About</h4>
+          {/* <h2>Press to toggle text {val2}</h2> */}
+          <div className="col-sm-3 container">
+            <textarea
+              className="form-control"
+              value={val2}
+              onChange={changeText}
+            ></textarea>
+          </div>
+          <Button
+            style={{ marginTop: "2%" }}
+            variant="contained"
+            color="primary"
+            onClick={changeAbout}
+          >
+            Create
           </Button>
 
           <br />
-          <div className="col-sm-2 container">
+          {/* <div className="col-sm-2 container">
             <input
               type="text"
               className="form-control mt-4"
               value={val2}
               onChange={onChange}
             />
-          </div>
+          </div> */}
+        </div>
+        <div className="container mt-5">
+          <h2 className="App">About</h2>
+          <p className="mt-2">{about}</p>
         </div>
       </motion.div>
     </>
