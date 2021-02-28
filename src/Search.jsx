@@ -17,7 +17,7 @@ const Search = () => {
   };
 
   useEffect(() => {
-    setTimeout((event) => {
+    setTimeout(() => {
       setLoader(false);
     }, 1500);
   }, [loader]);
@@ -108,6 +108,18 @@ const Search = () => {
                       src={`https://source.unsplash.com/600x400/?${image}`}
                       alt="ImageSearch"
                     />
+                    <div
+                      style={{
+                        textAlign: "center",
+                        top: "50%",
+                        left: "50%",
+                        position: "absolute",
+                        zIndex: -1,
+                        transform: "translate(-50%, -50%)"
+                      }}
+                    >
+                      <Loader />
+                    </div>
                     <Button
                       className="btn_add_image"
                       variant="contained"
@@ -122,7 +134,7 @@ const Search = () => {
                 )}
               </>
             ) : (
-              ""
+              <div className="mt-5">No Image Available</div>
             )}
           </div>
         </div>
