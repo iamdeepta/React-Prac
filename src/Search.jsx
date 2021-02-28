@@ -1,17 +1,26 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@material-ui/core";
 import { motion } from "framer-motion";
 import "./styles.css";
+import Loader from "./Loader";
 
 const Search = () => {
   const [image, setImage] = useState("");
   const [newImage, setNewImage] = useState([]);
+  const [loader, setLoader] = useState(false);
 
   const searchImage = (event) => {
     let value = event.target.value;
     setImage(value);
+    setLoader(true);
   };
+
+  useEffect(() => {
+    setTimeout((event) => {
+      setLoader(false);
+    }, 1500);
+  }, [loader]);
 
   //storing array
   const addImage = () => {
@@ -92,19 +101,25 @@ const Search = () => {
           <div>
             {image !== "" ? (
               <>
-                <img
-                  className="search_image"
-                  src={`https://source.unsplash.com/600x400/?${image}`}
-                  alt="ImageSearch"
-                />
-                <Button
-                  className="btn_add_image"
-                  variant="contained"
-                  color="primary"
-                  onClick={addImage}
-                >
-                  Add Image
-                </Button>
+                {!loader ? (
+                  <>
+                    <img
+                      className="search_image"
+                      src={`https://source.unsplash.com/600x400/?${image}`}
+                      alt="ImageSearch"
+                    />
+                    <Button
+                      className="btn_add_image"
+                      variant="contained"
+                      color="primary"
+                      onClick={addImage}
+                    >
+                      Add Image
+                    </Button>
+                  </>
+                ) : (
+                  <Loader />
+                )}
               </>
             ) : (
               ""
