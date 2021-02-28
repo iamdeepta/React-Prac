@@ -47,6 +47,10 @@
   cursor: pointer;
 }
 
+/* .array_image:hover {
+  transform: scale(1.2);
+} */
+
 .btn_delete {
   top: 50px;
   bottom: 50px;

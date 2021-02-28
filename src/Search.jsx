@@ -144,7 +144,7 @@ const Search = () => {
             return (
               <>
                 <img
-                  className="array_image"
+                  className="array_image animate__animated animate__zoomIn"
                   src={`https://source.unsplash.com/600x400/?${img}`}
                   alt="ImageArray"
                 />
@@ -153,6 +153,7 @@ const Search = () => {
                   onClick={() => {
                     deleteImage(index);
                   }}
+                  style={{ zIndex: 2 }}
                 >
                   x
                 </button>
