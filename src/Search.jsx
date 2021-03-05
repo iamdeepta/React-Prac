@@ -4,6 +4,8 @@ import { Button } from "@material-ui/core";
 import { motion } from "framer-motion";
 import "./styles.css";
 import Loader from "./Loader";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Search = () => {
   const [image, setImage] = useState("");
@@ -29,6 +31,7 @@ const Search = () => {
       return [...oldImage, image]; //spread operator means if there is any value then it will include it
     });
     //setImage("");
+    toast.success("Image Added!");
   };
 
   const deleteImage = (id) => {
@@ -162,6 +165,7 @@ const Search = () => {
           })}
         </div>
         <div style={{ paddingTop: "3%" }}></div>
+        <ToastContainer style={{ paddingTop: "4%" }} />
       </motion.div>
     </>
   );

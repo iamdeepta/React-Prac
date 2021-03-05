@@ -6,7 +6,7 @@ A React App created with CodeSandbox
 
 https://ticx9.csb.app/
 
-# Things that used in this project
+# Things that are used in this project
 
 1. React Hooks (useState & useEffect)
 2. React Router
@@ -18,3 +18,4 @@ https://ticx9.csb.app/
 8. Unsplash Image API
 9. React-Bootstrap
 10. Google Fonts
+11. React-Toastify
