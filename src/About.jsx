@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./styles.css";
 import { Button } from "@material-ui/core";
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function About() {
   //const [val, setVal] = useState("Hello");
@@ -14,7 +16,12 @@ export default function About() {
   };
 
   const changeAbout = () => {
-    setAbout(val2);
+    if (val2 === "") {
+      toast.error("Write Something!");
+    } else {
+      setAbout(val2);
+      toast.success("Created successfully!");
+    }
   };
 
   // const onChange = (event) => {
@@ -85,6 +92,8 @@ export default function About() {
           <h2 className="App">About</h2>
           <p className="mt-2">{about}</p>
         </div>
+
+        <ToastContainer style={{ paddingTop: "4%" }} />
       </motion.div>
     </>
   );
